@@ -1,0 +1,24 @@
+# permissions for end users to edit httpclients.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: httpclient-editor-role
+rules:
+- apiGroups:
+  - myapp.cncamp.io.example.com
+  resources:
+  - httpclients
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - myapp.cncamp.io.example.com
+  resources:
+  - httpclients/status
+  verbs:
+  - get

@@ -1,0 +1,16 @@
+domain: example.com
+layout:
+- go.kubebuilder.io/v3
+projectName: kubebuilder
+repo: github.com/google/pprof
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: example.com
+  group: myapp.cncamp.io
+  kind: HTTPClient
+  path: github.com/google/pprof/api/v1
+  version: v1
+version: "3"
