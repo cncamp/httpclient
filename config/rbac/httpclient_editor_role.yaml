@@ -5,7 +5,7 @@ metadata:
   name: httpclient-editor-role
 rules:
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients
   verbs:
@@ -17,7 +17,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients/status
   verbs:

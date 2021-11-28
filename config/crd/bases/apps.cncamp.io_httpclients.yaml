@@ -4,11 +4,11 @@ apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   annotations:
-    controller-gen.kubebuilder.io/version: v0.4.1
+    controller-gen.kubebuilder.io/version: v0.7.0
   creationTimestamp: null
-  name: httpclients.myapp.cncamp.io.example.com
+  name: httpclients.apps.cncamp.io
 spec:
-  group: myapp.cncamp.io.example.com
+  group: apps.cncamp.io
   names:
     kind: HTTPClient
     listKind: HTTPClientList
@@ -16,7 +16,7 @@ spec:
     singular: httpclient
   scope: Namespaced
   versions:
-  - name: v1
+  - name: v1alpha1
     schema:
       openAPIV3Schema:
         description: HTTPClient is the Schema for the httpclients API
@@ -39,8 +39,6 @@ spec:
               count:
                 type: integer
               serverAddress:
-                description: Foo is an example field of HTTPClient. Edit httpclient_types.go
-                  to remove/update
                 type: string
             type: object
           status:

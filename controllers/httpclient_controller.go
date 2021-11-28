@@ -25,7 +25,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	myappcncampiov1 "github.com/google/pprof/api/v1"
+	appsv1alpha1 "github.com/cncamp/httpclient/api/v1alpha1"
 )
 
 // HTTPClientReconciler reconciles a HTTPClient object
@@ -34,9 +34,9 @@ type HTTPClientReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=myapp.cncamp.io.example.com,resources=httpclients,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=myapp.cncamp.io.example.com,resources=httpclients/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=myapp.cncamp.io.example.com,resources=httpclients/finalizers,verbs=update
+//+kubebuilder:rbac:groups=apps.cncamp.io,resources=httpclients,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=apps.cncamp.io,resources=httpclients/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=apps.cncamp.io,resources=httpclients/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
@@ -46,10 +46,10 @@ type HTTPClientReconciler struct {
 // the user.
 //
 // For more details, check Reconcile and its Result here:
-// - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.8.3/pkg/reconcile
+// - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.10.0/pkg/reconcile
 func (r *HTTPClientReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	log := log.FromContext(ctx)
-	var httpclientholder myappcncampiov1.HTTPClient
+	var httpclientholder appsv1alpha1.HTTPClient
 	// your logic here
 	if err := r.Get(ctx, req.NamespacedName, &httpclientholder); err != nil {
 		log.Error(err, "Failed to read httpClient")
@@ -83,6 +83,6 @@ func (r *HTTPClientReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 // SetupWithManager sets up the controller with the Manager.
 func (r *HTTPClientReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&myappcncampiov1.HTTPClient{}).
+		For(&appsv1alpha1.HTTPClient{}).
 		Complete(r)
 }

@@ -1,16 +1,16 @@
-domain: example.com
+domain: cncamp.io
 layout:
 - go.kubebuilder.io/v3
-projectName: kubebuilder
-repo: github.com/google/pprof
+projectName: httpclient
+repo: github.com/cncamp/httpclient
 resources:
 - api:
     crdVersion: v1
     namespaced: true
   controller: true
-  domain: example.com
-  group: myapp.cncamp.io
+  domain: cncamp.io
+  group: apps
   kind: HTTPClient
-  path: github.com/google/pprof/api/v1
-  version: v1
+  path: github.com/cncamp/httpclient/api/v1alpha1
+  version: v1alpha1
 version: "3"

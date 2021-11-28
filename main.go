@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	myappcncampiov1 "github.com/google/pprof/api/v1"
-	"github.com/google/pprof/controllers"
+	appsv1alpha1 "github.com/cncamp/httpclient/api/v1alpha1"
+	"github.com/cncamp/httpclient/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -44,7 +44,7 @@ var (
 func init() {
 	utilruntime.Must(clientgoscheme.AddToScheme(scheme))
 
-	utilruntime.Must(myappcncampiov1.AddToScheme(scheme))
+	utilruntime.Must(appsv1alpha1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
 }
 
@@ -71,7 +71,7 @@ func main() {
 		Port:                   9443,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "81416f71.example.com",
+		LeaderElectionID:       "34555d30.cncamp.io",
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")

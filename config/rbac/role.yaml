@@ -7,7 +7,7 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients
   verbs:
@@ -19,13 +19,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients/finalizers
   verbs:
   - update
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients/status
   verbs:

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1
+package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -28,7 +28,6 @@ type HTTPClientSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of HTTPClient. Edit httpclient_types.go to remove/update
 	ServerAddress string `json:"serverAddress,omitempty"`
 	Count         int    `json:"count,omitempty"`
 }
@@ -37,8 +36,6 @@ type HTTPClientSpec struct {
 type HTTPClientStatus struct {
 	Succeeded int `json:"succeeded,omitempty"`
 	Failed    int `json:"failed,omitempty"`
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 }
 
 //+kubebuilder:object:root=true

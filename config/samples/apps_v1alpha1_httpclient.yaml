@@ -1,0 +1,7 @@
+apiVersion: apps.cncamp.io/v1alpha1
+kind: HTTPClient
+metadata:
+  name: httpclient-sample
+spec:
+  serverAddress: http://192.168.34.2:32147/hello
+  count: 5

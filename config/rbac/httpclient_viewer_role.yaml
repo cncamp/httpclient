@@ -5,7 +5,7 @@ metadata:
   name: httpclient-viewer-role
 rules:
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - myapp.cncamp.io.example.com
+  - apps.cncamp.io
   resources:
   - httpclients/status
   verbs:
